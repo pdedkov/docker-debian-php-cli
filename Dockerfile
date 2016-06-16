@@ -13,7 +13,8 @@ RUN apt-get update \
 && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # configure php
-RUN sed -i "/;date.timezone /c date.timezone = ${TIMEZONE}/" /etc/php5/cli/php.ini
+RUN sed -i "/;date.timezone /c date.timezone = ${TIMEZONE}" /etc/php5/cli/php.ini \
+&& sed -i "/^short_open_tag /c short_open_tag = On" /etc/php5/cli/php.ini
 
 # configure app
 WORKDIR /app
