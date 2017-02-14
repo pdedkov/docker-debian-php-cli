@@ -1,6 +1,8 @@
 FROM debian:latest
 MAINTAINER Pavel E. Dedkov <pavel.dedkov@gmail.com>
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 # env
 ENV TIMEZONE Europe/Moscow
 
